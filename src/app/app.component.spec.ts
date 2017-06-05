@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import {AppComponent, bracketsNested, bracketsBalanced} from './app.component';
+import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 
 describe('AppComponent', () => {
@@ -19,57 +19,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-});
-describe('bracketsNested function', () => {
-  it ('should return false for {}', () => {
-    expect(bracketsNested("{}")).toBe(false);
-  });
-  it ('should return false for {}{}', () => {
-    expect(bracketsNested("{}{}")).toBe(false);
-  });
-  it ('should return true for {{}}', () => {
-    expect(bracketsNested("{{}}")).toBe(true);
-  });
-  it ('should return true for {{{}}}', () => {
-    expect(bracketsNested("{{{}}}")).toBe(true);
-  });
-  it ('should return true for {}{{}}', () => {
-    expect(bracketsNested("{}{{}}")).toBe(true);
-  });
-  it ('should return true for {{}}{}', () => {
-    expect(bracketsNested("{{}}{}")).toBe(true);
-  });
-});
-
-describe('bracketsBalanced function', () => {
-  it ('should return true for empty string', () => {
-    expect(bracketsBalanced("")).toBe(true);
-  });
-  it ('should return true for {}', () => {
-    expect(bracketsBalanced("{}")).toBe(true);
-  });
-  it ('should return true for {{}}', () => {
-    expect(bracketsBalanced("{{}}")).toBe(true);
-  });
-  it ('should return true for {{}{}}', () => {
-    expect(bracketsBalanced("{{}{}}")).toBe(true);
-  });
-  it ('should return false for {', () => {
-    expect(bracketsBalanced("{")).toBe(false);
-  });
-  it ('should return false for }', () => {
-    expect(bracketsBalanced("}")).toBe(false);
-  });
-  it ('should return false for }{}', () => {
-    expect(bracketsBalanced("}")).toBe(false);
-  });
-  it ('should return false for {{}', () => {
-    expect(bracketsBalanced("}")).toBe(false);
-  });
-  it ('should return false for {{}{}', () => {
-    expect(bracketsBalanced("}")).toBe(false);
-  });
-  it ('should return false for }{{', () => {
-    expect(bracketsBalanced("}")).toBe(false);
-  });
 });
