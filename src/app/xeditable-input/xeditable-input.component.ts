@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Injector} from '@angular/core';
 
 @Component({
   selector: 'app-xeditable-input',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class XeditableInputComponent implements OnInit {
 
-  constructor() { }
+  @Input() default: string;
+
+  constructor(injector: Injector) { }
+
 
   ngOnInit() {
   }
