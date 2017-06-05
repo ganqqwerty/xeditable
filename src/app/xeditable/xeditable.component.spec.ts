@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { XeditableComponent,  bracketsNested, bracketsBalanced } from './xeditable.component';
+import {FormsModule} from "@angular/forms";
 
 describe('XeditableComponent', () => {
   let component: XeditableComponent;
@@ -8,7 +9,8 @@ describe('XeditableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XeditableComponent ]
+      declarations: [ XeditableComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
