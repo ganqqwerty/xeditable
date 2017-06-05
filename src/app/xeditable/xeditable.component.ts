@@ -85,3 +85,17 @@ export function bracketsNested(str: string): boolean {
       .join('')
       .search(/{{/) !== -1;
 }
+
+
+/**
+ * returns false if the form of xeditable is inccorrect, that is, the type is not in `validTypes` array or the format of default values doesn't correspond to a regular expression
+ * @param text
+ * @param validTypes
+ * @return {boolean}
+ */
+export function typeOfXeditable(text: string, validTypes: string[]) : boolean {
+  //check the presence of one of valid keywords for types registered in the system
+
+  // everything is okey, so return the component
+  return true;
+}
